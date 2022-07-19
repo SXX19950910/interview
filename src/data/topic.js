@@ -90,7 +90,8 @@ export const TopicList = [
                 label: 'D、[] instanceof Array 为 true',
                 value: '4'
             }
-        ]
+        ],
+        answer: '4'
     },
     {
         title: '4、以下不能够减少渲染更新渲染次数的是？',
@@ -134,7 +135,8 @@ export const TopicList = [
                 label: 'D、两者不可同时使用',
                 value: '4'
             }
-        ]
+        ],
+        answer: ['2', '1']
     },
     {
         title: '6、以下输出结果是什么？',
@@ -259,7 +261,7 @@ export const TopicList = [
             {
                 label: 'js在执行过程中，会先按书写顺序将同步任务放入主进程中，依次执行，待主进程中任务执行完则去事件队列中取异步任务，先微后宏，将其拿到主进程中执行，依次循环读取→执行的操作，这样就构成了事件循环。',
                 value: '1',
-                className: 'w-full'
+                className: '!w-full'
             }
         ]
     },
@@ -269,22 +271,22 @@ export const TopicList = [
         answerOptions: [
             {
                 label: '1、GET方法用于使用给定的URI从给定服务器中检索信息，即从指定资源中请求数据。使用GET方法的请求应该只是检索数据，并且不应对数据产生其他影响。',
-                className: 'w-full',
+                className: '!w-full',
                 value: '1'
             },
             {
                 label: '2、POST方法用于将数据发送到服务器以创建或更新资源，它要求服务器确认请求中包含的内容作为由URI区分的Web资源的另一个下属 ,POST请求永远不会被缓存，且对数据长度没有限制',
-                className: 'w-full',
+                className: '!w-full',
                 value: '2'
             },
             {
                 label: '3、PUT方法用于将数据发送到服务器以创建或更新资源，它可以用上传的内容替换目标资源中的所有当前内容,它会将包含的元素放在所提供的URI下，如果URI指示的是当前资源，则会被改变。如果URI未指示当前资源，则服务器可以使用该URI创建资源。',
-                className: 'w-full',
+                className: '!w-full',
                 value: '3'
             },
             {
                 label: '4、DELETE方法用来删除指定的资源，它会删除URI给出的目标资源的所有当前内容',
-                className: 'w-full',
+                className: '!w-full',
                 value: '4'
             }
         ]
@@ -367,7 +369,7 @@ export const TopicList = [
                 value: '4'
             }
         ],
-        answer: '4（暂定）'
+        answer: '4'
     },
     {
         title: '17、React中控制组件是否更新的方式有哪些？',
@@ -390,7 +392,7 @@ export const TopicList = [
                 value: '4'
             }
         ],
-        answer: ['2', '3']
+        answer: ['2', '3', '4']
     },
     {
         title: '18、js运行时的作用域有哪些？(多选)',
@@ -758,5 +760,65 @@ export const TopicList = [
             '\n' +
             '}',
         answer: ['should', 'should', 'render', 'render', 'snapshot', 'update']
+    },
+    {
+        title: '33、以下程序输出的内容是什么？',
+        type: 'select',
+        topic: ' function Foo() {\n' +
+            '       var i = 0\n' +
+            '       return function () {\n' +
+            '           document.write(i++)\n' +
+            '       }\n' +
+            '   }\n' +
+            '   var f1 = Foo()\n' +
+            '   var f2 = Foo()\n' +
+            '   f1()\n' +
+            '   f1()\n' +
+            '   f2()',
+        answer: ['0', '1', '0']
+    },
+    {
+        title: '34、以下程序输出结果是什么？',
+        type: 'select',
+        topic: '   var b = \'40\'\n' +
+            '   var c = 7\n' +
+            '\n' +
+            '   console.log(b%c)',
+        answerOptions: [
+            {
+                label: 'A、5',
+                value: '1'
+            },
+            {
+                label: 'B、"5"',
+                value: '2'
+            },
+            {
+                label: 'undefined',
+                value: '3'
+            },
+            {
+                label: 'null',
+                value: '4'
+            }
+        ],
+        answer: '1'
+    },
+    {
+        title: '35、以下程序输出什么？',
+        type: 'select',
+        topic: '   var myObject = {\n' +
+            '       foo: \'bar\',\n' +
+            '       func: function () {\n' +
+            '           var self = this\n' +
+            '           console.log(this.foo)\n' +
+            '           console.log(self.foo)\n' +
+            '           (function () {\n' +
+            '               console.log(this.foo)\n' +
+            '               console.log(self.foo)\n' +
+            '           }())\n' +
+            '       }\n' +
+            '   }',
+        answer: ['bar', 'bar', 'undefined', 'bar']
     }
 ]

@@ -8,19 +8,26 @@
 
 </body>
 <script>
-    setTimeout(function () {
-        console.log('6')
-    }, 0)
-    console.log('1')
-    async function async1() {
-        console.log('2')
-        await async2()
-        console.log('5')
+    let result = 1
+
+    const add = function () {
+        result += 1
     }
-    async function async2() {
-        console.log('3')
+
+    const counter = function (def = 1) {
+        let result = def
+        return {
+            add,
+            get() {
+                return result
+            }
+        }
     }
-    async1()
-    console.log('4')
+
+    const count = counter()
+    count.add()
+    console.log(count.get())
+    count.add()
+    console.log(count.get())
 </script>
 </html>
