@@ -1,0 +1,12 @@
+.home-wrap {
+  .item {
+    :global {
+      .CodeMirror.cm-s-material {
+        &:last-of-type {
+          height: 0;
+          //visibility: hidden;
+        }
+      }
+    }
+  }
+}
