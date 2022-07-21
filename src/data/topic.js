@@ -836,5 +836,22 @@ export const TopicList = [
                 className: '!w-full'
             }
         ]
+    },
+    {
+        title: '37、git rebase 和 git merge的区别',
+        type: 'select',
+        answerOptions: [
+            {
+                label: 'git merge: 将两个分支合并为一个最新的提交，会有两个parent',
+                value: '1',
+                className: '!w-full'
+            },
+            {
+                label: 'git rebase：会取消分⽀中的每个提交，并把他们临时存放，然后把当前分⽀更新到最新的origin分⽀，最后再把所有提交应⽤到分⽀上。',
+                value: '2',
+                className: '!w-full'
+            }
+
+        ]
     }
 ]
