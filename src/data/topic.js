@@ -827,11 +827,13 @@ export const TopicList = [
         answerOptions: [
             {
                 label: '1、interface只能定义对象类型的数据结构, type则可以定义其他类型的，例如联合类型',
-                value: '1'
+                value: '1',
+                className: '!w-full'
             },
             {
                 label: '2、interface定义重名会合并属性，type则不可以',
-                value: '2'
+                value: '2',
+                className: '!w-full'
             }
         ]
     }
