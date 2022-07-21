@@ -4,7 +4,6 @@ const WebpackCopyPlugin = require('./config/plugins/copy')
 
 
 module.exports = {
-    publicUrl: 'build',
     webpack:{
         alias:{
             '@': addPath('src')

@@ -820,5 +820,19 @@ export const TopicList = [
             '       }\n' +
             '   }',
         answer: ['bar', 'bar', 'undefined', 'bar']
+    },
+    {
+        title: '36、ts中interface和type的区别',
+        type: 'select',
+        answerOptions: [
+            {
+                label: '1、interface只能定义对象类型的数据结构, type则可以定义其他类型的，例如联合类型',
+                value: '1'
+            },
+            {
+                label: '2、interface定义重名会合并属性，type则不可以',
+                value: '2'
+            }
+        ]
     }
 ]
