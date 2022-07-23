@@ -3,6 +3,7 @@ export const TopicList = [
     {
         title: '1、下面代码打印什么内容',
         type: 'select',
+        id: '1',
         answerOptions: [
             {
                 label: 'A、a defined? true b defined? true',
@@ -27,11 +28,13 @@ export const TopicList = [
             '\n' +
             '    console.log(\'a defined?\' + (typeof a !== "undefined"))\n' +
             '    console.log(\'b defined?\' + (typeof a !== "undefined"))',
-        language: 'javascript'
+        language: 'javascript',
+        answer: '2'
     },
     {
         title: '2、使用SetStatePage组件，控制台会打印什么？',
         type: 'select',
+        id: '2',
         answerOptions: [
             {
                 label: 'A、render',
@@ -68,11 +71,13 @@ export const TopicList = [
             '            <button>{ count }</button>\n' +
             '        </div>\n' +
             '    )\n' +
-            '}'
+            '}',
+        answer: ['render', 'render', 'render', 'render']
     },
     {
         title: '3、在使用typeof和instanceof进行类型判断正确的是？',
         type: 'select',
+        id: '3',
         answerOptions: [
             {
                 label: 'A、typeof null 为 "null"',
@@ -94,6 +99,7 @@ export const TopicList = [
         answer: '4'
     },
     {
+        id: '4',
         title: '4、以下不能够减少渲染更新渲染次数的是？',
         type: 'select',
         answerOptions: [
@@ -113,11 +119,13 @@ export const TopicList = [
                 label: 'D、减少state，多用props',
                 value: '4'
             }
-        ]
+        ],
+        answer: '4'
     },
     {
         title: '5、useEffect和useLayoutEffect的说法正确的是（多选）',
         type: 'select',
+        id: '5',
         answerOptions: [
             {
                 label: 'A、两者执行时机不同',
@@ -140,6 +148,7 @@ export const TopicList = [
     },
     {
         title: '6、以下输出结果是什么？',
+        id: '6',
         type: 'select',
         answerOptions: [
             {
@@ -163,10 +172,12 @@ export const TopicList = [
             '    console.log(id, config)\n' +
             '}\n' +
             '\n' +
-            'service(null, "")'
+            'service(null, "")',
+        answer: '3'
     },
     {
         title: '7、以下代码的打印结果是什么?',
+        id: 7,
         type: 'select',
         answerOptions: [
             {
@@ -183,7 +194,7 @@ export const TopicList = [
             },
             {
                 label: 'D、打印错误对象Error:Foo',
-                value: 4
+                value: '4'
             }
         ],
         language: 'javascript',
@@ -201,10 +212,12 @@ export const TopicList = [
             '\n' +
             '    catchPromise.then((res) => {\n' +
             '        console.log(res)\n' +
-            '    })'
+            '    })',
+        answer: '4'
     },
     {
         title: '8、js事件循环机制（1）',
+        id: '8',
         topic: 'setTimeout(function() {\n' +
             '    console.log(\'4\')\n' +
             '})\n' +
@@ -218,11 +231,7 @@ export const TopicList = [
             'console.log(\'2\')',
         type: 'select',
         language: 'javascript',
-        answerOptions: [
-            {
-                label: '答案：1234'
-            }
-        ]
+        answer: '1 2 3 4'
     },
     {
         title: '9、js事件循环机制（2）',
@@ -840,6 +849,7 @@ export const TopicList = [
     {
         title: '37、git rebase 和 git merge的区别',
         type: 'select',
+        id: '37',
         answerOptions: [
             {
                 label: 'git merge: 将两个分支合并为一个最新的提交，会有两个parent',
@@ -850,6 +860,106 @@ export const TopicList = [
                 label: 'git rebase：会取消分⽀中的每个提交，并把他们临时存放，然后把当前分⽀更新到最新的origin分⽀，最后再把所有提交应⽤到分⽀上。',
                 value: '2',
                 className: '!w-full'
+            }
+
+        ]
+    },
+    {
+        title: '38、请手写防抖函数',
+        type: 'select',
+        id: '38',
+        answerType: 'code',
+        answer: 'const debounce = function (fn, delay) {\n' +
+            '        let timer\n' +
+            '        const context = this\n' +
+            '        return function () {\n' +
+            '            clearTimeout(timer)\n' +
+            '            timer = setTimeout(() => {\n' +
+            '                fn.apply(context)\n' +
+            '            }, delay)\n' +
+            '        }\n' +
+            '    }\n' +
+            '\n' +
+            '    const handleClick = () => {\n' +
+            '        console.log(\'被点击了\')\n' +
+            '    }\n' +
+            '\n' +
+            '    const debounceClick = debounce(handleClick, 500)\n' +
+            '\n' +
+            '    document.querySelector(\'.btn\').addEventListener(\'click\', function () {\n' +
+            '        debounceClick()\n' +
+            '    })'
+    },
+    {
+        title: '39、js的设计模式有哪些？',
+        id: '39',
+        answerOptions: [
+            {
+                label: '1、装饰器模式',
+                value: '1'
+            },
+            {
+                label: '2、构造器模式',
+                value: '2'
+            },
+            {
+                label: '3、工厂模式',
+                value: '3'
+            },
+            {
+                label: '4、单例模式',
+                value: '4'
+            },
+            {
+                label: '5、适配器模式',
+                value: '5'
+            },
+            {
+                label: '6、发布订阅模式',
+                value: '6'
+            }
+        ]
+    },
+    {
+        title: '40、请聊聊http1.0, 1.1, 2.0, 3.0',
+        id: '40',
+        type: 'select',
+        answerOptions: [
+            {
+                label: '1:无状态，无连接；2:短连接：每次发送请求都要重新建立tcp请求，即三次握手，非常浪费性能;3:无host头域，也就是http请求头里的host；4:不允许断点续传，而且不能只传输对象的一部分，要求传输整个对象',
+                value: '1',
+                className: '!w-full'
+            }
+        ]
+    },
+    {
+        title: '41、js变量的创建机制',
+        id: '41',
+        type: 'select'
+    },
+    {
+        title: '42、React Hook在使用时需要注意些什么？',
+        id: '42',
+        type: 'select',
+        answerOptions: [
+            {
+                label: '1、HOOK需要顶层调用,在循环或条件判断等其他地方使用是不可以的',
+                value: '1'
+            },
+            {
+                label: '2、需要注意HOOK的调用顺序',
+                value: '2'
+            }
+        ]
+    },
+    {
+        title: '43、执行上下文和执行栈',
+        id: '43',
+        type: 'select',
+        answerOptions: [
+            {
+                label: '执行栈也叫调用栈，具有后进先出的结构，用于存储在代码执行期间创建的所有执行上下文。当JS引擎开始执行第一行脚本代码时，就会创建一个全局执行上下文然后压入执行栈中，每当引擎遇到一个函数时，就会创建一个函数执行上下文，然后将这个执行上下文压入到执行栈。引擎会执行位于执行栈栈顶的执行上下文（一般是函数执行上下文），当该函数执行结束后，对应的执行上下文就会被弹出，然后控制流程就会到达执行栈的下一个执行上下文',
+                value: '1'
             }
 
         ]
