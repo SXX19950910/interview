@@ -977,9 +977,33 @@ export const TopicList = [
                 className: '!w-full'
             },
             {
-                label: '1、reactive接受的值是一个对象的形式',
+                label: '2、reactive接受的值是一个对象的形式',
                 className: '!w-full'
             }
         ]
+    },
+    {
+        title: '45、请说说以下的输出的结果',
+        id: '45',
+        type: 'select',
+        answerOptions: [],
+        topic: 'function c () {\n' +
+            '    console.log(this)\n' +
+            '  }\n' +
+            '  function b () {\n' +
+            '    return function () {\n' +
+            '      console.log(this)\n' +
+            '    }\n' +
+            '  }\n' +
+            '  const obj = {\n' +
+            '    b() {\n' +
+            '      console.log(this)\n' +
+            '    }\n' +
+            '  }\n' +
+            '\n' +
+            '  c()\n' +
+            '  b()()\n' +
+            '  obj.b()',
+        answer: ['window', 'window', 'obj']
     }
 ]

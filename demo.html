@@ -5,26 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-<div class="btn">点击我</div>
+
 </body>
 <script>
-    const http = async () => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                reject('未获取到结果')
-            }, 2000)
-        })
-    }
-    async function run () {
-        return new Promise(async (resolve, reject) => {
-            await Promise.allSettled([http(), http(), http()]).then((data) => {
-                const isError = data.every((item => item.status === 'rejected'))
-                isError && reject('请求错误了')
-            })
-        })
-    }
 
-    const fetchDebounce = debounce(run, 10000)
-    fetchDebounce()
 </script>
 </html>
